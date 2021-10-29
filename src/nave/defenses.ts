@@ -32,7 +32,7 @@ export default class Defenses extends Graphics {
 
   public draw(): void {
     this.clear();
-    this.beginFill(0xFFFFFF);
+    this.beginFill(0x0385E0);
     for (
       let i: number = 0, angle: number = 0;
       i < this.amount;
