@@ -34,7 +34,7 @@ export default class Hull extends Graphics {
 
   protected drawHull() {
     this.beginFill(0x805530);
-    this.lineStyle(3, 0xFFFFFF);
+    this.lineStyle(3, 0x00FFFF);
     this.drawPolygon([
       new Point(50, 0),
       new Point(0, 100),
