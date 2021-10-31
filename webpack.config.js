@@ -1,5 +1,4 @@
 const path = require("path");
-const {CheckerPlugin} = require('awesome-typescript-loader');
 const CopyPlugin = require('copy-webpack-plugin');
 const PACKAGE = require('./package.json');
 
@@ -16,6 +15,7 @@ var PATHS = {
 // Webpack config
 module.exports = {
   mode: "development",
+  devtool: 'inline-source-map',
   entry: {
     [FILE_NAME]: [PATHS.entryPoint],
   },
@@ -35,12 +35,11 @@ module.exports = {
   module: {
     rules: [{
       test: /\.tsx?$/,
-      loader: 'awesome-typescript-loader',
+      use: 'ts-loader',
       exclude: /node_modules/,
     }]
   },
   plugins: [
-    new CheckerPlugin(),
     new CopyPlugin(
       {
         patterns: [
